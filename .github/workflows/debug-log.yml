@@ -13,3 +13,10 @@ jobs:
           echo "::group::Show environment variables"
           printenv
           echo "::endgroup::"
+      - run: echo "::error::This is an error"
+      - run: echo "::warning::This is an warning"
+      - run: echo "::notice::This is an notice"
+      - run: |
+            echo "## Example Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
+            echo "- first line" >> "${GITHUB_STEP_SUMMARY}"
+            echo "- second line" >> "${GITHUB_STEP_SUMMARY}"
