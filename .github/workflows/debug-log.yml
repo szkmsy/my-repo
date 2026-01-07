@@ -5,3 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "::debug::Thisis a debug log"
+      - run: |
+          set -x
+          date
+          hostname
+      - run: |
+          echo "::group::Show environment variables"
+          printenv
+          echo "::endgroup::"
